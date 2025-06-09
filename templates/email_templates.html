@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>72Hours - Welcome!</title>
+    <style>
+      body {
+        font-family: "Noto Sans KR", "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f6f2ff;
+        color: #222;
+      }
+      .page-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 0 32px 0;
+        box-sizing: border-box;
+      }
+      header {
+        margin-bottom: 24px;
+      }
+      .container {
+        max-width: 600px;
+        background: #fff;
+        border-radius: 32px;
+        box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13),
+          0 1.5px 8px rgba(120, 80, 255, 0.04);
+        overflow: hidden;
+        padding: 0 0 8px 0;
+      }
+      .header {
+        padding: 48px 32px 32px 32px;
+        text-align: left;
+        background: #fff;
+        position: relative;
+      }
+      .logo {
+        margin-bottom: 24px;
+      }
+      .logo img {
+        height: 36px;
+      }
+      .mongs {
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      .mongs img {
+        height: 90px;
+        max-width: 100%;
+        filter: drop-shadow(0 4px 16px #e6d6ff);
+      }
+      .main-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0 0 12px 0;
+        color: #222;
+        letter-spacing: -1px;
+      }
+      .main-title .highlight {
+        color: #b97aff;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        color: #b97aff;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+      .desc {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 32px;
+      }
+      .button {
+        display: inline-block;
+        background: #b97aff;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 16px 36px;
+        border-radius: 32px;
+        text-decoration: none;
+        margin: 24px 0 0 0;
+        box-shadow: 0 2px 8px rgba(185, 122, 255, 0.12);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .button:hover {
+        background: #a259e6;
+        box-shadow: 0 4px 16px rgba(185, 122, 255, 0.18);
+      }
+      .content {
+        padding: 0 32px 32px 32px;
+      }
+      .features-box {
+        background: #f6f2ff;
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(185, 122, 255, 0.07);
+        padding: 32px 24px 24px 24px;
+        margin: 32px 0 0 0;
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .feature-item {
+        font-size: 1.08rem;
+        color: #3a2066;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.7;
+      }
+      .feature-item b {
+        color: #b97aff;
+        font-weight: 700;
+        margin-right: 4px;
+      }
+      footer {
+        margin-top: 32px;
+        width: 100%;
+        text-align: center;
+      }
+      .footer {
+        background: #fff;
+        color: #888;
+        text-align: center;
+        font-size: 0.97rem;
+        padding: 32px 24px 18px 24px;
+        border-radius: 0 0 32px 32px;
+        box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      @media (max-width: 600px) {
+        .page-wrapper {
+          padding: 8px 0 8px 0;
+        }
+        .container {
+          margin: 8px 4px 8px 4px;
+          border-radius: 18px;
+        }
+        .header,
+        .content {
+          padding: 16px !important;
+        }
+        .features-box {
+          padding: 16px 8px 12px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="
+        background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+        padding: 40px 0;
+      "
+    >
+      <tr>
+        <td align="center">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="
+              background: #fff;
+              border-radius: 32px;
+              box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13);
+              padding: 0;
+            "
+          >
+            <tr>
+              <td style="padding: 48px 32px 32px 32px; text-align: left">
+                <div style="margin-bottom: 24px">
+                  <img
+                    src="https://www.72h.io/logo.png"
+                    alt="72Hours Logo"
+                    style="height: 36px"
+                  />
+                </div>
+                <div style="text-align: center; margin-bottom: 18px">
+                  <img
+                    src="https://www.72h.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMongs.4f34e304.png&w=828&q=75&dpl=dpl_BLcMrjonX3qmtQkaUhqDwHQvHbv2"
+                    alt="Mongs Mascot"
+                    style="
+                      height: 90px;
+                      max-width: 100%;
+                      filter: drop-shadow(0 4px 16px #e6d6ff);
+                    "
+                  />
+                </div>
+                <div
+                  style="
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                    margin: 0 0 12px 0;
+                    color: #222;
+                    letter-spacing: -1px;
+                  "
+                >
+                  Conquer <span style="color: #b97aff">K-Beauty</span><br />in
+                  just 72 hours
+                </div>
+                <div
+                  style="
+                    font-size: 1.1rem;
+                    color: #b97aff;
+                    font-weight: 700;
+                    margin-bottom: 24px;
+                  "
+                >
+                  Get Free Samples, Direct Video Meetings, and Instant Contracts
+                </div>
+                <div style="font-size: 1rem; color: #444; margin-bottom: 32px">
+                  Your fastest gateway to Korean brands.<br />
+                  Welcome, <b>{{company_name}}</b>!
+                </div>
+                <a
+                  href="https://www.72h.io/home"
+                  style="
+                    display: inline-block;
+                    background: #b97aff;
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 16px 36px;
+                    border-radius: 32px;
+                    text-decoration: none;
+                    margin: 24px 0 0 0;
+                    box-shadow: 0 2px 8px rgba(185, 122, 255, 0.12);
+                    transition: background 0.2s, box-shadow 0.2s;
+                  "
+                >
+                  Discover More Brands
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: #f6f2ff;
+                    border-radius: 18px;
+                    box-shadow: 0 2px 12px rgba(185, 122, 255, 0.07);
+                    padding: 32px 24px 24px 24px;
+                    margin: 32px 0 0 0;
+                  "
+                >
+                  <tr>
+                    <td style="padding: 24px 24px 8px 24px">
+                      <table
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🔍
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Discover</b> the hottest
+                            K-Beauty brands, all in one place.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            ⭐
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Spot</b> your favorites
+                            instantly and add them to your wish list.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            💬
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Message</b> brands
+                            directly—build real connections, no barriers.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🎪
+                          </td>
+                          <td style="font-size: 1.08rem; color: #3a2066">
+                            <b style="color: #b97aff">Experience</b> a virtual
+                            expo: explore, connect, and unlock exclusive
+                            opportunities with trending Korean beauty brands.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <div style="margin-top: 32px">
+                  <h2
+                    style="color: #222; margin-bottom: 24px; text-align: center"
+                  >
+                    Featured Brands
+                  </h2>
+                  <div
+                    style="
+                      display: grid;
+                      grid-template-columns: repeat(2, 1fr);
+                      gap: 24px;
+                    "
+                  >
+                    <!-- MILLAC Card -->
+                    <div
+                      style="
+                        position: relative;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 12px rgba(185, 122, 255, 0.08);
+                        min-height: 240px;
+                      "
+                    >
+                      <img
+                        src="https://res.cloudinary.com/prod-72h/image/upload/v1739774843/uploads/m74qm2zqkuyoqtgfm53m.jpg"
+                        alt="MILLAC Main"
+                        style="
+                          width: 100%;
+                          height: 240px;
+                          object-fit: cover;
+                          display: block;
+                        "
+                      />
+                      <div
+                        style="
+                          position: absolute;
+                          inset: 0;
+                          background: linear-gradient(
+                            90deg,
+                            rgba(0, 0, 0, 0.55),
+                            rgba(0, 0, 0, 0.15)
+                          );
+                        "
+                      ></div>
+                      <div
+                        style="
+                          position: absolute;
+                          top: 24px;
+                          left: 24px;
+                          color: #fff;
+                          z-index: 2;
+                        "
+                      >
+                        <div style="font-size: 1.3rem; font-weight: 700">
+                          MILLAC
+                        </div>
+                        <div style="font-size: 1rem; margin-top: 4px">
+                          The New Standard of Inner Care
+                        </div>
+                      </div>
+                      <a
+                        href="https://www.72h.io/brands/MILLAC?documentId=ki3itebxw5ys480tbvkfxzr2"
+                        style="
+                          position: absolute;
+                          left: 24px;
+                          bottom: 24px;
+                          background: #111;
+                          color: #fff;
+                          font-weight: 700;
+                          border-radius: 8px;
+                          padding: 10px 28px;
+                          text-decoration: none;
+                          font-size: 1.1rem;
+                          z-index: 2;
+                          display: inline-block;
+                        "
+                      >
+                        View →
+                      </a>
+                    </div>
+                    <!-- ARTOIS Card -->
+                    <div
+                      style="
+                        position: relative;
+                        border-radius: 16px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 12px rgba(185, 122, 255, 0.08);
+                        min-height: 240px;
+                      "
+                    >
+                      <img
+                        src="https://res.cloudinary.com/prod-72h/image/upload/v1747978713/uploads/v9knzgbjcnjxwhuhsgqo.jpg"
+                        alt="ARTOIS Main"
+                        style="
+                          width: 100%;
+                          height: 240px;
+                          object-fit: cover;
+                          display: block;
+                        "
+                      />
+                      <div
+                        style="
+                          position: absolute;
+                          inset: 0;
+                          background: linear-gradient(
+                            90deg,
+                            rgba(0, 0, 0, 0.55),
+                            rgba(0, 0, 0, 0.15)
+                          );
+                        "
+                      ></div>
+                      <div
+                        style="
+                          position: absolute;
+                          top: 24px;
+                          left: 24px;
+                          color: #fff;
+                          z-index: 2;
+                        "
+                      >
+                        <div style="font-size: 1.3rem; font-weight: 700">
+                          ARTOIS
+                        </div>
+                        <div style="font-size: 1rem; margin-top: 4px">
+                          Dress up in fragrance
+                        </div>
+                      </div>
+                      <a
+                        href="https://www.72h.io/brands/ARTOIS?documentId=ie7fk0mhstfqzo0qj000tgvq"
+                        style="
+                          position: absolute;
+                          left: 24px;
+                          bottom: 24px;
+                          background: #111;
+                          color: #fff;
+                          font-weight: 700;
+                          border-radius: 8px;
+                          padding: 10px 28px;
+                          text-decoration: none;
+                          font-size: 1.1rem;
+                          z-index: 2;
+                          display: inline-block;
+                        "
+                      >
+                        View →
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  background: #fff;
+                  color: #888;
+                  text-align: center;
+                  font-size: 0.97rem;
+                  padding: 32px 24px 18px 24px;
+                  border-radius: 0 0 32px 32px;
+                  box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+                  max-width: 600px;
+                  margin: 0 auto;
+                "
+              >
+                This is an automated message. Please do not reply.<br />
+                Contact:
+                <a
+                  href="mailto:support@72h.io"
+                  style="color: #b97aff; text-decoration: underline"
+                  >support@72h.io</a
+                >
+                |
+                <a href="https://www.72h.io/unsubscribe" style="color: #b97aff"
+                  >unsubscribe</a
+                ><br />
+                © 2024 72Hours. All rights reserved.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
