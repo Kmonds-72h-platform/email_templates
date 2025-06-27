@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>72Hours - Bens Lab Premium Skincare</title>
+    <style>
+      body {
+        font-family: "Noto Sans KR", "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f6f2ff;
+        color: #222;
+      }
+      .page-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 0 32px 0;
+        box-sizing: border-box;
+      }
+      .container {
+        max-width: 600px;
+        background: #fff;
+        border-radius: 32px;
+        box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13),
+          0 1.5px 8px rgba(120, 80, 255, 0.04);
+        overflow: hidden;
+        padding: 0 0 8px 0;
+      }
+      .header {
+        padding: 48px 32px 32px 32px;
+        text-align: left;
+        background: #fff;
+        position: relative;
+      }
+      .logo {
+        margin-bottom: 24px;
+      }
+      .logo img {
+        height: 36px;
+      }
+      .mongs {
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      .mongs img {
+        height: 90px;
+        max-width: 100%;
+        filter: drop-shadow(0 4px 16px #e6d6ff);
+      }
+      .main-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0 0 12px 0;
+        color: #222;
+        letter-spacing: -1px;
+      }
+      .main-title .highlight {
+        color: #b97aff;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        color: #b97aff;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+      .desc {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 32px;
+      }
+      .button {
+        display: inline-block;
+        background: #b97aff;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 16px 36px;
+        border-radius: 32px;
+        text-decoration: none;
+        margin: 24px 0 0 0;
+        box-shadow: 0 2px 8px rgba(185, 122, 255, 0.12);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .button:hover {
+        background: #a259e6;
+        box-shadow: 0 4px 16px rgba(185, 122, 255, 0.18);
+      }
+      .content {
+        padding: 0 32px 32px 32px;
+      }
+      .brand-hero {
+        background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 32px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .brand-logo {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 24px auto;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+      .brand-logo img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+      .brand-name {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 12px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .brand-slogan {
+        font-size: 1.2rem;
+        color: #ffd700;
+        font-weight: 600;
+        margin-bottom: 24px;
+        font-style: italic;
+      }
+      .brand-stats {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 24px;
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-number {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #fff;
+        display: block;
+      }
+      .stat-label {
+        font-size: 0.9rem;
+        color: #ccc;
+        margin-top: 4px;
+      }
+      .section-title {
+        color: #222;
+        margin-bottom: 24px;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .product-card {
+        background: #f8f8f8;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 200px;
+        position: relative;
+      }
+      .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-section {
+        margin: 32px 0;
+      }
+      .video-container {
+        background: #f8f8f8;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 300px;
+        position: relative;
+      }
+      .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 24px;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+      .features-box {
+        background: #f6f2ff;
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(185, 122, 255, 0.07);
+        padding: 32px 24px 24px 24px;
+        margin: 32px 0;
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .feature-item {
+        font-size: 1.08rem;
+        color: #3a2066;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.7;
+      }
+      .feature-item b {
+        color: #b97aff;
+        font-weight: 700;
+        margin-right: 4px;
+      }
+      .contact-section {
+        background: #2e7d32;
+        border-radius: 18px;
+        padding: 32px 24px;
+        text-align: center;
+        margin: 32px 0;
+      }
+      .contact-title {
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .contact-info {
+        color: #ccc;
+        font-size: 1.1rem;
+        margin-bottom: 24px;
+      }
+      .contact-button {
+        display: inline-block;
+        background: #ffd700;
+        color: #2e7d32;
+        font-weight: 700;
+        padding: 16px 32px;
+        border-radius: 24px;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+      footer {
+        margin-top: 32px;
+        width: 100%;
+        text-align: center;
+      }
+      .footer {
+        background: #fff;
+        color: #888;
+        text-align: center;
+        font-size: 0.97rem;
+        padding: 32px 24px 18px 24px;
+        border-radius: 0 0 32px 32px;
+        box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      @media (max-width: 600px) {
+        .page-wrapper {
+          padding: 8px 0 8px 0;
+        }
+        .container {
+          margin: 8px 4px 8px 4px;
+          border-radius: 18px;
+        }
+        .header,
+        .content {
+          padding: 16px !important;
+        }
+        .brand-hero {
+          padding: 24px 16px;
+        }
+        .brand-name {
+          font-size: 2rem;
+        }
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+        .brand-stats {
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="
+        background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+        padding: 40px 0;
+      "
+    >
+      <tr>
+        <td align="center">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="
+              background: #fff;
+              border-radius: 32px;
+              box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13);
+              padding: 0;
+            "
+          >
+            <tr>
+              <td style="padding: 48px 32px 32px 32px; text-align: left">
+                <div style="margin-bottom: 24px">
+                  <img
+                    src="https://www.72h.io/logo.png"
+                    alt="72Hours Logo"
+                    style="height: 36px"
+                  />
+                </div>
+                <div style="text-align: center; margin-bottom: 18px">
+                  <img
+                    src="https://www.72h.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMongs.4f34e304.png&w=828&q=75&dpl=dpl_BLcMrjonX3qmtQkaUhqDwHQvHbv2"
+                    alt="Mongs Mascot"
+                    style="
+                      height: 90px;
+                      max-width: 100%;
+                      filter: drop-shadow(0 4px 16px #e6d6ff);
+                    "
+                  />
+                </div>
+                <div
+                  style="
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                    margin: 0 0 12px 0;
+                    color: #222;
+                    letter-spacing: -1px;
+                  "
+                >
+                  Discover <span style="color: #b97aff">Bens Lab</span><br />
+                  Premium Skincare Collection
+                </div>
+                <div
+                  style="
+                    font-size: 1.1rem;
+                    color: #b97aff;
+                    font-weight: 700;
+                    margin-bottom: 24px;
+                  "
+                >
+                  Nature's Wisdom, Our Solution
+                </div>
+                <div style="font-size: 1rem; color: #444; margin-bottom: 32px">
+                  Reclaim your skin's natural health with thoughtfully crafted
+                  formulas.<br />
+                  Welcome, <b>$%name%$</b>!
+                </div>
+                <a
+                  href="https://72h.io/page-track/letter-benslab?email=$%email%$&name=$%name%$&campaign_name=letter-benslab"
+                  style="
+                    display: inline-block;
+                    background: #b97aff;
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 16px 36px;
+                    border-radius: 32px;
+                    text-decoration: none;
+                    margin: 24px 0 0 0;
+                    box-shadow: 0 2px 8px rgba(185, 122, 255, 0.12);
+                    transition: background 0.2s, box-shadow 0.2s;
+                  "
+                >
+                  Discover Bens Lab Collection
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <!-- Brand Hero Section -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #2e7d32 0%,
+                      #4caf50 100%
+                    );
+                    border-radius: 24px;
+                    padding: 32px;
+                    margin-bottom: 32px;
+                    text-align: center;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <div style="margin-bottom: 24px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741152796/uploads/ueteszontayv9qwtblkn.png"
+                          alt="Bens Lab Logo"
+                          style="width: 80px; height: 80px; object-fit: contain"
+                        />
+                      </div>
+                      <div
+                        style="
+                          font-size: 2.5rem;
+                          font-weight: 800;
+                          color: #fff;
+                          margin-bottom: 12px;
+                        "
+                      >
+                        Bens Lab
+                      </div>
+                      <div
+                        style="
+                          font-size: 1.2rem;
+                          color: #ffd700;
+                          font-weight: 600;
+                          margin-bottom: 24px;
+                          font-style: italic;
+                        "
+                      >
+                        Nature's Wisdom, Our Solution
+                      </div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: center;
+                          gap: 32px;
+                          margin-top: 24px;
+                        "
+                      >
+                        <div style="text-align: center">
+                          <span
+                            style="
+                              font-size: 1.8rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >15</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #ccc;
+                              margin-top: 4px;
+                            "
+                            >Products</span
+                          >
+                        </div>
+                        <div style="text-align: center">
+                          <span
+                            style="
+                              font-size: 1.8rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >3</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #ccc;
+                              margin-top: 4px;
+                            "
+                            >Videos</span
+                          >
+                        </div>
+                        <div style="text-align: center">
+                          <span
+                            style="
+                              font-size: 1.8rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >VIP</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #ccc;
+                              margin-top: 4px;
+                            "
+                            >Brand</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Featured Products -->
+                <div style="margin-bottom: 32px">
+                  <h2
+                    style="
+                      color: #222;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Premium Skincare Collection
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 0 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741153672/uploads/pzs8ffdqbl1xqmclf6yy.jpg"
+                          alt="Bens Lab Product 1"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 0 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741153730/uploads/d9bqtkfawh7q4mudij3n.jpg"
+                          alt="Bens Lab Product 2"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 8px 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741153733/uploads/fvaljyktntaqx8pluvkm.jpg"
+                          alt="Bens Lab Product 3"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 8px 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741153742/uploads/gwmtftary4d7hd8cxxup.jpg"
+                          alt="Bens Lab Product 4"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- Brand Features -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: #f6f2ff;
+                    border-radius: 18px;
+                    box-shadow: 0 2px 12px rgba(185, 122, 255, 0.07);
+                    padding: 32px 24px 24px 24px;
+                    margin: 32px 0;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <h3
+                        style="
+                          color: #222;
+                          margin-bottom: 24px;
+                          text-align: center;
+                          font-size: 1.4rem;
+                          font-weight: 700;
+                        "
+                      >
+                        Why Choose Bens Lab?
+                      </h3>
+                      <table
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🌿
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Natural Wisdom</b> -
+                            Harnessing the pure power of nature with scientific
+                            innovation
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🧬
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff"
+                              >Fermentation Technology</b
+                            >
+                            - Unlocking concentrated, nutrient-rich ingredients
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            💎
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Skin Regeneration</b> -
+                            Restoring skin's innate functions and natural health
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🛡️
+                          </td>
+                          <td style="font-size: 1.08rem; color: #3a2066">
+                            <b style="color: #b97aff">Environmental Defense</b>
+                            - Protecting against environmental aggressors
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Featured Video -->
+                <div style="margin: 32px 0">
+                  <h2
+                    style="
+                      color: #222;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Experience Bens Lab Results
+                  </h2>
+                  <a
+                    href="https://72h.io/page-track/letter-benslab?email=$%email%$&name=$%name%$&campaign_name=letter-benslab&brand=Bens%20Lab&documentId=vz0gr7b8sdag8gjkdvhwmrb0&action=watch_video"
+                    target="_blank"
+                    style="
+                      display: block;
+                      width: 100%;
+                      max-width: 500px;
+                      margin: 0 auto;
+                    "
+                  >
+                    <img
+                      src="https://res.cloudinary.com/prod-72h/image/upload/v1741152909/uploads/cbullqzb0xkeagsrbbeq.jpg"
+                      alt="Watch Bens Lab"
+                      style="width: 100%; border-radius: 16px; display: block"
+                    />
+                  </a>
+                </div>
+
+                <!-- Additional Products -->
+                <div style="margin: 32px 0">
+                  <h2
+                    style="
+                      color: #222;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Complete Skincare Line
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 0 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741153780/uploads/ofwwzuxgfr59oykrzcw7.jpg"
+                          alt="Bens Lab Product 5"
+                          width="100%"
+                          height="150"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 0 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741153801/uploads/sdcmbiwtllta4vpysedg.jpg"
+                          alt="Bens Lab Product 6"
+                          width="100%"
+                          height="150"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- Contact Section -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: #2e7d32;
+                    border-radius: 18px;
+                    padding: 32px 24px;
+                    text-align: center;
+                    margin: 32px 0;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <div
+                        style="
+                          color: #fff;
+                          font-size: 1.4rem;
+                          font-weight: 700;
+                          margin-bottom: 16px;
+                        "
+                      >
+                        Connect with Bens Lab
+                      </div>
+                      <div
+                        style="
+                          color: #ccc;
+                          font-size: 1.1rem;
+                          margin-bottom: 24px;
+                        "
+                      >
+                        WhatsApp: +82 10-6217-7927<br />
+                        Instagram: @benia3._official
+                      </div>
+                      <a
+                        href="https://72h.io/page-track/letter-benslab?email=$%email%$&name=$%name%$&campaign_name=letter-benslab&brand=Bens%20Lab&documentId=vz0gr7b8sdag8gjkdvhwmrb0"
+                        style="
+                          display: inline-block;
+                          background: #ffd700;
+                          color: #2e7d32;
+                          font-weight: 700;
+                          padding: 16px 32px;
+                          border-radius: 24px;
+                          text-decoration: none;
+                          font-size: 1.1rem;
+                        "
+                      >
+                        Contact Bens Lab →
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- CTA Section -->
+                <div style="margin-top: 32px; text-align: center">
+                  <a
+                    href="https://72h.io/page-track/letter-benslab?email=$%email%$&name=$%name%$&campaign_name=letter-benslab&brand=Bens%20Lab&documentId=vz0gr7b8sdag8gjkdvhwmrb0&action=explore_products"
+                    style="
+                      display: inline-block;
+                      background: #b97aff;
+                      color: #fff;
+                      font-weight: 700;
+                      font-size: 1.2rem;
+                      padding: 20px 48px;
+                      border-radius: 32px;
+                      text-decoration: none;
+                      box-shadow: 0 4px 16px rgba(185, 122, 255, 0.2);
+                      transition: background 0.2s, box-shadow 0.2s;
+                    "
+                  >
+                    Explore All Bens Lab Products →
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  background: #fff;
+                  color: #888;
+                  text-align: center;
+                  font-size: 0.97rem;
+                  padding: 32px 24px 18px 24px;
+                  border-radius: 0 0 32px 32px;
+                  box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+                  max-width: 600px;
+                  margin: 0 auto;
+                "
+              >
+                This is an automated message. Please do not reply.<br />
+                Contact:
+                <a
+                  href="mailto:support@72h.io"
+                  style="color: #b97aff; text-decoration: underline"
+                  >support@72h.io</a
+                >
+                |
+                <a href="$%unsubscribe%$" style="color: #b97aff">unsubscribe</a
+                ><br />
+                © 2024 72Hours. All rights reserved.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+ 

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>72Hours - DrReborn Brand Detail</title>
+    <style>
+      body {
+        font-family: "Noto Sans KR", "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+        color: #222;
+      }
+      .container {
+        max-width: 600px;
+        background: #fff;
+        border-radius: 32px;
+        box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13),
+          0 1.5px 8px rgba(120, 80, 255, 0.04);
+        overflow: hidden;
+        padding: 0 0 8px 0;
+      }
+      .header {
+        padding: 48px 32px 32px 32px;
+        text-align: left;
+        background: #fff;
+        position: relative;
+      }
+      .logo {
+        margin-bottom: 24px;
+      }
+      .logo img {
+        height: 36px;
+      }
+      .mongs {
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      .mongs img {
+        height: 90px;
+        max-width: 100%;
+        filter: drop-shadow(0 4px 16px #e6d6ff);
+      }
+      .main-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0 0 12px 0;
+        color: #222;
+        letter-spacing: -1px;
+      }
+      .main-title .highlight {
+        color: #1976d2;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        color: #1976d2;
+        font-weight: 700;
+        margin-bottom: 24px;
+        font-style: italic;
+      }
+      .desc {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 32px;
+      }
+      .button {
+        display: inline-block;
+        background: #1976d2;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 16px 36px;
+        border-radius: 32px;
+        text-decoration: none;
+        margin: 24px 0 0 0;
+        box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .button:hover {
+        background: #1565c0;
+        box-shadow: 0 4px 16px rgba(25, 118, 210, 0.18);
+      }
+      .content {
+        padding: 0 32px 32px 32px;
+      }
+      .brand-hero {
+        background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+        border-radius: 20px;
+        padding: 40px 32px;
+        margin-bottom: 32px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .brand-logo {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 24px auto;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+      .brand-logo img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+      }
+      .brand-name {
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 12px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .brand-slogan {
+        font-size: 1.2rem;
+        color: #b3e5fc;
+        font-weight: 600;
+        margin-bottom: 28px;
+        font-style: italic;
+      }
+      .brand-stats {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 32px;
+      }
+      .stat-item {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 16px 20px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+      }
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #fff;
+        display: block;
+      }
+      .stat-label {
+        font-size: 0.9rem;
+        color: #b3e5fc;
+        margin-top: 4px;
+      }
+      .section-title {
+        color: #1976d2;
+        margin-bottom: 24px;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 700;
+        position: relative;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .product-card {
+        background: #f8f9fa;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 200px;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+      .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .features-box {
+        background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(25, 118, 210, 0.07);
+        padding: 40px 32px;
+        margin: 40px 0;
+        border: 2px solid rgba(25, 118, 210, 0.08);
+      }
+      .feature-item {
+        font-size: 1.1rem;
+        color: #1976d2;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.7;
+        padding: 12px 16px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 12px;
+        margin-left: 0;
+      }
+      .feature-item b {
+        color: #1976d2;
+        font-weight: 700;
+        margin-right: 8px;
+      }
+      .contact-section {
+        background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+        border-radius: 20px;
+        padding: 40px 32px;
+        text-align: center;
+        margin: 40px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .contact-title {
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .contact-info {
+        color: #b3e5fc;
+        font-size: 1.1rem;
+        margin-bottom: 24px;
+      }
+      .contact-button {
+        display: inline-block;
+        background: #fff;
+        color: #1976d2;
+        font-weight: 700;
+        padding: 16px 32px;
+        border-radius: 24px;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+      .contact-button:hover {
+        background: #e3f2fd;
+      }
+      .footer {
+        background: #fff;
+        color: #888;
+        text-align: center;
+        font-size: 0.97rem;
+        padding: 32px 24px 18px 24px;
+        border-radius: 0 0 32px 32px;
+        box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="
+        background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+        padding: 40px 0;
+      "
+    >
+      <tr>
+        <td align="center">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="
+              background: #fff;
+              border-radius: 32px;
+              box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13);
+              padding: 0;
+            "
+          >
+            <!-- Plenty Plant 헤더 영역 복사/유지 -->
+            <tr>
+              <td style="padding: 48px 32px 32px 32px; text-align: left">
+                <div style="margin-bottom: 24px">
+                  <img
+                    src="https://www.72h.io/logo.png"
+                    alt="72Hours Logo"
+                    style="height: 36px"
+                  />
+                </div>
+                <div style="text-align: center; margin-bottom: 18px">
+                  <img
+                    src="https://www.72h.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMongs.4f34e304.png&w=828&q=75&dpl=dpl_BLcMrjonX3qmtQkaUhqDwHQvHbv2"
+                    alt="Mongs Mascot"
+                    style="
+                      height: 90px;
+                      max-width: 100%;
+                      filter: drop-shadow(0 4px 16px #e6d6ff);
+                    "
+                  />
+                </div>
+                <div
+                  style="
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                    margin: 0 0 12px 0;
+                    color: #222;
+                    letter-spacing: -1px;
+                  "
+                >
+                  Discover <span style="color: #1976d2">DrReborn</span><br />
+                  Real Beauty Health
+                </div>
+                <div
+                  style="
+                    font-size: 1.1rem;
+                    color: #1976d2;
+                    font-weight: 700;
+                    margin-bottom: 24px;
+                    font-style: italic;
+                  "
+                >
+                  Real Beauty Health Backed by Medical
+                </div>
+                <div style="font-size: 1rem; color: #444; margin-bottom: 32px">
+                  Experience medically-backed beauty solutions developed by Dr.
+                  Sodam Jung.<br />
+                  Welcome, <b>$%name%$</b>!
+                </div>
+                <a
+                  href="https://72h.io/page-track/letter-drreborn?email=$%email%$&name=$%name%$&campaign_name=letter-drreborn"
+                  style="
+                    display: inline-block;
+                    background: #1976d2;
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 16px 36px;
+                    border-radius: 32px;
+                    text-decoration: none;
+                    margin: 24px 0 0 0;
+                    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.12);
+                    transition: background 0.2s, box-shadow 0.2s;
+                  "
+                  >Explore DrReborn Collection</a
+                >
+              </td>
+            </tr>
+            <!-- DrReborn 브랜드 본문 영역 -->
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <!-- Brand Hero Section -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #1976d2 0%,
+                      #42a5f5 100%
+                    );
+                    border-radius: 20px;
+                    padding: 40px 32px;
+                    margin-bottom: 32px;
+                    text-align: center;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <div style="margin-bottom: 24px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741311387/uploads/o3svo62iahsbqtjbnwzt.jpg"
+                          alt="DrReborn Logo"
+                          style="width: 70px; height: 70px; object-fit: contain"
+                        />
+                      </div>
+                      <div
+                        style="
+                          font-size: 2.6rem;
+                          font-weight: 800;
+                          color: #fff;
+                          margin-bottom: 12px;
+                          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+                        "
+                      >
+                        DrReborn
+                      </div>
+                      <div
+                        style="
+                          font-size: 1.2rem;
+                          color: #b3e5fc;
+                          font-weight: 600;
+                          margin-bottom: 28px;
+                          font-style: italic;
+                        "
+                      >
+                        Real Beauty Health Backed by Medical
+                      </div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: center;
+                          gap: 40px;
+                          margin-top: 32px;
+                        "
+                      >
+                        <div
+                          style="
+                            text-align: center;
+                            background: rgba(255, 255, 255, 0.1);
+                            padding: 16px 20px;
+                            border-radius: 16px;
+                          "
+                        >
+                          <span
+                            style="
+                              font-size: 2rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >8</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #b3e5fc;
+                              margin-top: 4px;
+                            "
+                            >Products</span
+                          >
+                        </div>
+                        <div
+                          style="
+                            text-align: center;
+                            background: rgba(255, 255, 255, 0.1);
+                            padding: 16px 20px;
+                            border-radius: 16px;
+                          "
+                        >
+                          <span
+                            style="
+                              font-size: 2rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >4</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #b3e5fc;
+                              margin-top: 4px;
+                            "
+                            >Videos</span
+                          >
+                        </div>
+                        <div
+                          style="
+                            text-align: center;
+                            background: rgba(255, 255, 255, 0.1);
+                            padding: 16px 20px;
+                            border-radius: 16px;
+                          "
+                        >
+                          <span
+                            style="
+                              font-size: 2rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >VIP</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #b3e5fc;
+                              margin-top: 4px;
+                            "
+                            >Brand</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <!-- Featured Products -->
+                <div style="margin-bottom: 40px">
+                  <h2
+                    style="
+                      color: #1976d2;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Exosome Skincare Collection
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 0 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741314673/uploads/oyxytr9u7oh25fymicnz.png"
+                          alt="DrReborn Product 1"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 0 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741314675/uploads/oquddqdfh8hqngvwcunf.png"
+                          alt="DrReborn Product 2"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 8px 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741314675/uploads/bfgdpby6qb09aggo9kfs.png"
+                          alt="DrReborn Product 3"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 8px 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741314675/uploads/ordiuypqjzqira6bvvg4.png"
+                          alt="DrReborn Product 4"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <!-- Brand Features -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #e3f2fd 0%,
+                      #bbdefb 100%
+                    );
+                    border-radius: 20px;
+                    box-shadow: 0 4px 20px rgba(25, 118, 210, 0.07);
+                    padding: 40px 32px;
+                    margin: 40px 0;
+                    border: 2px solid rgba(25, 118, 210, 0.08);
+                  "
+                >
+                  <tr>
+                    <td>
+                      <h3
+                        style="
+                          color: #1976d2;
+                          margin-bottom: 32px;
+                          text-align: center;
+                          font-size: 1.4rem;
+                          font-weight: 700;
+                        "
+                      >
+                        Why Choose DrReborn?
+                      </h3>
+                      <table
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            valign="top"
+                            style="
+                              font-size: 1.3rem;
+                              width: 40px;
+                              padding: 12px 16px;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            🩺
+                          </td>
+                          <td
+                            style="
+                              padding: 12px 16px;
+                              font-size: 1.1rem;
+                              color: #1976d2;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            <b style="color: #1976d2">Doctor-Developed</b> -
+                            Personally researched and developed by Dr. Sodam
+                            Jung
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="
+                              font-size: 1.3rem;
+                              width: 40px;
+                              padding: 12px 16px;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            🔬
+                          </td>
+                          <td
+                            style="
+                              padding: 12px 16px;
+                              font-size: 1.1rem;
+                              color: #1976d2;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            <b style="color: #1976d2">Medical Expertise</b> -
+                            Backed by rigorous research and medical knowledge
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="
+                              font-size: 1.3rem;
+                              width: 40px;
+                              padding: 12px 16px;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            💬
+                          </td>
+                          <td
+                            style="
+                              padding: 12px 16px;
+                              font-size: 1.1rem;
+                              color: #1976d2;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            <b style="color: #1976d2">Direct Communication</b> -
+                            Dr. Jung leads marketing and communicates with
+                            customers
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="
+                              font-size: 1.3rem;
+                              width: 40px;
+                              padding: 12px 16px;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                            "
+                          >
+                            🌏
+                          </td>
+                          <td
+                            style="
+                              padding: 12px 16px;
+                              font-size: 1.1rem;
+                              color: #1976d2;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                            "
+                          >
+                            <b style="color: #1976d2">Global Recognition</b> -
+                            Rapidly growing exosome skincare line with
+                            international demand
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <!-- Featured Video -->
+                <div style="margin: 40px 0">
+                  <h2
+                    style="
+                      color: #1976d2;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Meet Dr. Reborn in Action
+                  </h2>
+                  <a
+                    href="https://72h.io/page-track/letter-drreborn?email=$%email%$&name=$%name%$&campaign_name=letter-drreborn&brand=DrReborn&documentId=tsmvpmk8kw5hpvtm0l3b25wx&action=watch_video"
+                    target="_blank"
+                    style="
+                      display: block;
+                      width: 100%;
+                      max-width: 500px;
+                      margin: 0 auto;
+                    "
+                  >
+                    <img
+                      src="https://res.cloudinary.com/prod-72h/image/upload/v1741314673/uploads/oyxytr9u7oh25fymicnz.png"
+                      alt="Watch DrReborn"
+                      style="width: 100%; border-radius: 16px; display: block"
+                    />
+                  </a>
+                </div>
+                <!-- Contact Section -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #1976d2 0%,
+                      #42a5f5 100%
+                    );
+                    border-radius: 20px;
+                    padding: 40px 32px;
+                    text-align: center;
+                    margin: 40px 0;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <div
+                        style="
+                          color: #fff;
+                          font-size: 1.4rem;
+                          font-weight: 700;
+                          margin-bottom: 16px;
+                        "
+                      >
+                        Connect with DrReborn
+                      </div>
+                      <div
+                        style="
+                          color: #b3e5fc;
+                          font-size: 1.1rem;
+                          margin-bottom: 24px;
+                        "
+                      >
+                        WhatsApp: +82 10-7469-5050<br />Instagram: @dr.jungsodam
+                      </div>
+                      <a
+                        href="https://72h.io/page-track/letter-drreborn?email=$%email%$&name=$%name%$&campaign_name=letter-drreborn&brand=DrReborn&documentId=tsmvpmk8kw5hpvtm0l3b25wx"
+                        style="
+                          display: inline-block;
+                          background: #fff;
+                          color: #1976d2;
+                          font-weight: 700;
+                          padding: 16px 32px;
+                          border-radius: 24px;
+                          text-decoration: none;
+                          font-size: 1.1rem;
+                        "
+                        >Contact DrReborn →</a
+                      >
+                    </td>
+                  </tr>
+                </table>
+                <!-- CTA Section -->
+                <div style="margin-top: 32px; text-align: center">
+                  <a
+                    href="https://72h.io/page-track/letter-drreborn?email=$%email%$&name=$%name%$&campaign_name=letter-drreborn&brand=DrReborn&documentId=tsmvpmk8kw5hpvtm0l3b25wx&action=explore_products"
+                    style="
+                      display: inline-block;
+                      background: #1976d2;
+                      color: #fff;
+                      font-weight: 700;
+                      font-size: 1.2rem;
+                      padding: 20px 48px;
+                      border-radius: 32px;
+                      text-decoration: none;
+                      box-shadow: 0 4px 16px rgba(25, 118, 210, 0.2);
+                      transition: background 0.2s, box-shadow 0.2s;
+                    "
+                    >Explore All DrReborn Products →</a
+                  >
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  background: #fff;
+                  color: #888;
+                  text-align: center;
+                  font-size: 0.97rem;
+                  padding: 32px 24px 18px 24px;
+                  border-radius: 0 0 32px 32px;
+                  box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+                  max-width: 600px;
+                  margin: 0 auto;
+                "
+              >
+                This is an automated message. Please do not reply.<br />
+                Contact:
+                <a
+                  href="mailto:support@72h.io"
+                  style="color: #1976d2; text-decoration: underline"
+                  >support@72h.io</a
+                >
+                |
+                <a href="$%unsubscribe%$" style="color: #1976d2">unsubscribe</a
+                ><br />
+                © 2024 72Hours. All rights reserved.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

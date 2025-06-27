@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>72Hours - Plenty Plant Brand Detail</title>
+    <style>
+      body {
+        font-family: "Noto Sans KR", "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+        color: #222;
+      }
+      .page-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 0 32px 0;
+        box-sizing: border-box;
+      }
+      .container {
+        max-width: 600px;
+        background: #fff;
+        border-radius: 32px;
+        box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13),
+          0 1.5px 8px rgba(120, 80, 255, 0.04);
+        overflow: hidden;
+        padding: 0 0 8px 0;
+      }
+      .header {
+        padding: 48px 32px 32px 32px;
+        text-align: left;
+        background: #fff;
+        position: relative;
+      }
+      .logo {
+        margin-bottom: 24px;
+      }
+      .logo img {
+        height: 36px;
+      }
+      .mongs {
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      .mongs img {
+        height: 90px;
+        max-width: 100%;
+        filter: drop-shadow(0 4px 16px #e6d6ff);
+      }
+      .main-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0 0 12px 0;
+        color: #222;
+        letter-spacing: -1px;
+      }
+      .main-title .highlight {
+        color: #4caf50;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        color: #4caf50;
+        font-weight: 700;
+        margin-bottom: 24px;
+        font-style: italic;
+      }
+      .desc {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 32px;
+      }
+      .button {
+        display: inline-block;
+        background: #4caf50;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 16px 36px;
+        border-radius: 32px;
+        text-decoration: none;
+        margin: 24px 0 0 0;
+        box-shadow: 0 2px 8px rgba(76, 175, 80, 0.12);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .button:hover {
+        background: #388e3c;
+        box-shadow: 0 4px 16px rgba(76, 175, 80, 0.18);
+      }
+      .content {
+        padding: 0 32px 32px 32px;
+      }
+      .brand-hero {
+        background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
+        border-radius: 20px;
+        padding: 40px 32px;
+        margin-bottom: 32px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .brand-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20v-40c11.046 0 20 8.954 20 20z'/%3E%3C/g%3E%3C/svg%3E");
+        z-index: 1;
+      }
+      .brand-hero > * {
+        position: relative;
+        z-index: 2;
+      }
+      .brand-logo {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 24px auto;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      }
+      .brand-logo img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+      }
+      .brand-name {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 12px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .brand-slogan {
+        font-size: 1.3rem;
+        color: #a5d6a7;
+        font-weight: 600;
+        margin-bottom: 32px;
+        font-style: italic;
+      }
+      .brand-stats {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 32px;
+      }
+      .stat-item {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 16px 20px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+      }
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #fff;
+        display: block;
+      }
+      .stat-label {
+        font-size: 0.9rem;
+        color: #c8e6c9;
+        margin-top: 4px;
+      }
+      .section-title {
+        color: #2d4a2d;
+        margin-bottom: 24px;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        position: relative;
+      }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #4caf50, #66bb6a);
+        border-radius: 2px;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .product-card {
+        background: #f8f9fa;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 200px;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+      .product-card:hover {
+        transform: translateY(-4px);
+      }
+      .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .features-box {
+        background: linear-gradient(135deg, #f1f8e9 0%, #e8f5e8 100%);
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(76, 175, 80, 0.1);
+        padding: 40px 32px;
+        margin: 40px 0;
+        border: 2px solid rgba(76, 175, 80, 0.1);
+      }
+      .feature-item {
+        font-size: 1.1rem;
+        color: #2d4a2d;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.7;
+        padding: 12px 16px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 12px;
+        margin-left: 0;
+      }
+      .feature-item b {
+        color: #4caf50;
+        font-weight: 700;
+        margin-right: 8px;
+      }
+      .contact-section {
+        background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
+        border-radius: 20px;
+        padding: 40px 32px;
+        text-align: center;
+        margin: 40px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .contact-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M30 30c0 16.569-13.431 30-30 30v-60c16.569 0 30 13.431 30 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        z-index: 1;
+      }
+      .contact-section > * {
+        position: relative;
+        z-index: 2;
+      }
+      .contact-title {
+        color: #fff;
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .contact-info {
+        color: #c8e6c9;
+        font-size: 1.1rem;
+        margin-bottom: 28px;
+        line-height: 1.6;
+      }
+      .contact-button {
+        display: inline-block;
+        background: #fff;
+        color: #2e7d32;
+        font-weight: 700;
+        padding: 18px 36px;
+        border-radius: 28px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      }
+      .contact-button:hover {
+        background: #f1f8e9;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+      .footer {
+        background: #f8f9fa;
+        color: #6c757d;
+        text-align: center;
+        font-size: 0.95rem;
+        padding: 32px 24px 20px 24px;
+        border-radius: 0 0 24px 24px;
+        border-top: 1px solid #e9ecef;
+      }
+      @media (max-width: 600px) {
+        .page-wrapper {
+          padding: 8px 0 8px 0;
+        }
+        .container {
+          margin: 8px 4px 8px 4px;
+          border-radius: 18px;
+        }
+        .header,
+        .content {
+          padding: 16px !important;
+        }
+        .brand-hero {
+          padding: 24px 16px;
+        }
+        .brand-name {
+          font-size: 2.2rem;
+        }
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+        .brand-stats {
+          flex-direction: column;
+          gap: 16px;
+        }
+        .stat-item {
+          padding: 12px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="
+        background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+        padding: 40px 0;
+      "
+    >
+      <tr>
+        <td align="center">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="
+              background: #fff;
+              border-radius: 32px;
+              box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13);
+              padding: 0;
+            "
+          >
+            <tr>
+              <td style="padding: 48px 32px 32px 32px; text-align: left">
+                <div style="margin-bottom: 24px">
+                  <img
+                    src="https://www.72h.io/logo.png"
+                    alt="72Hours Logo"
+                    style="height: 36px"
+                  />
+                </div>
+                <div style="text-align: center; margin-bottom: 18px">
+                  <img
+                    src="https://www.72h.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMongs.4f34e304.png&w=828&q=75&dpl=dpl_BLcMrjonX3qmtQkaUhqDwHQvHbv2"
+                    alt="Mongs Mascot"
+                    style="
+                      height: 90px;
+                      max-width: 100%;
+                      filter: drop-shadow(0 4px 16px #e6d6ff);
+                    "
+                  />
+                </div>
+                <div
+                  style="
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                    margin: 0 0 12px 0;
+                    color: #222;
+                    letter-spacing: -1px;
+                  "
+                >
+                  Discover <span style="color: #4caf50">Plenty Plant</span
+                  ><br />
+                  Plant Energy Beauty
+                </div>
+                <div
+                  style="
+                    font-size: 1.1rem;
+                    color: #4caf50;
+                    font-weight: 700;
+                    margin-bottom: 24px;
+                    font-style: italic;
+                  "
+                >
+                  The beauty embracing nature
+                </div>
+                <div style="font-size: 1rem; color: #444; margin-bottom: 32px">
+                  Experience the incredible power of plants with safe and
+                  effective ingredients from nature.<br />
+                  Welcome, <b>$%name%$</b>!
+                </div>
+                <a
+                  href="https://72h.io/page-track/letter-plentyplant?email=$%email%$&name=$%name%$&campaign_name=letter-plentyplant"
+                  style="
+                    display: inline-block;
+                    background: #4caf50;
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 16px 36px;
+                    border-radius: 32px;
+                    text-decoration: none;
+                    margin: 24px 0 0 0;
+                    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.12);
+                    transition: background 0.2s, box-shadow 0.2s;
+                  "
+                >
+                  Explore Plenty Plant Collection
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <!-- Brand Hero Section -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #2e7d32 0%,
+                      #388e3c 100%
+                    );
+                    border-radius: 20px;
+                    padding: 40px 32px;
+                    margin-bottom: 32px;
+                    text-align: center;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <div style="margin-bottom: 24px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741680101/uploads/yassyqqnf4bqjsupflnc.png"
+                          alt="Plenty Plant Logo"
+                          style="width: 70px; height: 70px; object-fit: contain"
+                        />
+                      </div>
+                      <div
+                        style="
+                          font-size: 2.8rem;
+                          font-weight: 800;
+                          color: #fff;
+                          margin-bottom: 12px;
+                          text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+                        "
+                      >
+                        Plenty Plant
+                      </div>
+                      <div
+                        style="
+                          font-size: 1.3rem;
+                          color: #a5d6a7;
+                          font-weight: 600;
+                          margin-bottom: 32px;
+                          font-style: italic;
+                        "
+                      >
+                        The beauty embracing nature
+                      </div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: center;
+                          gap: 40px;
+                          margin-top: 32px;
+                        "
+                      >
+                        <div
+                          style="
+                            text-align: center;
+                            background: rgba(255, 255, 255, 0.1);
+                            padding: 16px 20px;
+                            border-radius: 16px;
+                          "
+                        >
+                          <span
+                            style="
+                              font-size: 2rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >8</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #c8e6c9;
+                              margin-top: 4px;
+                            "
+                            >Products</span
+                          >
+                        </div>
+                        <div
+                          style="
+                            text-align: center;
+                            background: rgba(255, 255, 255, 0.1);
+                            padding: 16px 20px;
+                            border-radius: 16px;
+                          "
+                        >
+                          <span
+                            style="
+                              font-size: 2rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >2</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #c8e6c9;
+                              margin-top: 4px;
+                            "
+                            >Videos</span
+                          >
+                        </div>
+                        <div
+                          style="
+                            text-align: center;
+                            background: rgba(255, 255, 255, 0.1);
+                            padding: 16px 20px;
+                            border-radius: 16px;
+                          "
+                        >
+                          <span
+                            style="
+                              font-size: 2rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >VIP</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #c8e6c9;
+                              margin-top: 4px;
+                            "
+                            >Brand</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Featured Products -->
+                <div style="margin-bottom: 40px">
+                  <h2
+                    style="
+                      color: #2d4a2d;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.8rem;
+                      font-weight: 700;
+                      position: relative;
+                    "
+                  >
+                    Plant-Based Skincare Collection
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 0 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741680372/uploads/wyvhlz8rqwenxevlco7n.png"
+                          alt="Plenty Plant Product 1"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 0 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741680374/uploads/ruwimu42m5tjxi6jd5aa.png"
+                          alt="Plenty Plant Product 2"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 8px 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741680374/uploads/ehwez5d2orww9yn5li4b.png"
+                          alt="Plenty Plant Product 3"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 8px 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741680373/uploads/yqcu400xpwqlqojvkvn3.png"
+                          alt="Plenty Plant Product 4"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- Brand Features -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #f1f8e9 0%,
+                      #e8f5e8 100%
+                    );
+                    border-radius: 20px;
+                    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.1);
+                    padding: 40px 32px;
+                    margin: 40px 0;
+                    border: 2px solid rgba(76, 175, 80, 0.1);
+                  "
+                >
+                  <tr>
+                    <td>
+                      <h3
+                        style="
+                          color: #2d4a2d;
+                          margin-bottom: 32px;
+                          text-align: center;
+                          font-size: 1.6rem;
+                          font-weight: 700;
+                          position: relative;
+                        "
+                      >
+                        Why Choose Plenty Plant?
+                      </h3>
+                      <table
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            valign="top"
+                            style="
+                              font-size: 1.3rem;
+                              width: 40px;
+                              padding: 12px 16px;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            🌱
+                          </td>
+                          <td
+                            style="
+                              padding: 12px 16px;
+                              font-size: 1.1rem;
+                              color: #2d4a2d;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            <b style="color: #4caf50">Plant Energy Focus</b> -
+                            Harnessing the incredible power of plants
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="
+                              font-size: 1.3rem;
+                              width: 40px;
+                              padding: 12px 16px;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            🧬
+                          </td>
+                          <td
+                            style="
+                              padding: 12px 16px;
+                              font-size: 1.1rem;
+                              color: #2d4a2d;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            <b style="color: #4caf50">Full Plant Benefits</b> -
+                            High-concentration extracts, not just water
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="
+                              font-size: 1.3rem;
+                              width: 40px;
+                              padding: 12px 16px;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            🌿
+                          </td>
+                          <td
+                            style="
+                              padding: 12px 16px;
+                              font-size: 1.1rem;
+                              color: #2d4a2d;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                              margin-bottom: 8px;
+                            "
+                          >
+                            <b style="color: #4caf50">Nature's Essence</b> -
+                            Pure energy of plants absorbed into your skin
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="
+                              font-size: 1.3rem;
+                              width: 40px;
+                              padding: 12px 16px;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                            "
+                          >
+                            💚
+                          </td>
+                          <td
+                            style="
+                              padding: 12px 16px;
+                              font-size: 1.1rem;
+                              color: #2d4a2d;
+                              background: rgba(255, 255, 255, 0.6);
+                              border-radius: 12px;
+                            "
+                          >
+                            <b style="color: #4caf50">Healthy Beauty</b> -
+                            Respecting all life on Earth while promoting beauty
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Featured Video -->
+                <div style="margin: 40px 0">
+                  <h2
+                    style="
+                      color: #2d4a2d;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.8rem;
+                      font-weight: 700;
+                      position: relative;
+                    "
+                  >
+                    Experience Plant Energy
+                  </h2>
+                  <a
+                    href="https://72h.io/page-track/letter-plentyplant?email=$%email%$&name=$%name%$&campaign_name=letter-plentyplant&brand=PlentyPlant&documentId=comauradricbt7ooz0if98fr&action=watch_video"
+                    target="_blank"
+                    style="
+                      display: block;
+                      width: 100%;
+                      max-width: 500px;
+                      margin: 0 auto;
+                    "
+                  >
+                    <img
+                      src="https://res.cloudinary.com/prod-72h/image/upload/v1741680161/uploads/ahvygaeetyquwtcafu2c.png"
+                      alt="Watch Plenty Plant"
+                      style="width: 100%; border-radius: 16px; display: block"
+                    />
+                  </a>
+                </div>
+
+                <!-- Additional Products -->
+                <div style="margin: 40px 0">
+                  <h2
+                    style="
+                      color: #2d4a2d;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.8rem;
+                      font-weight: 700;
+                      position: relative;
+                    "
+                  >
+                    Complete Plant-Based Line
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 0 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741680374/uploads/ffzwp4qe3elhucsxhaxm.png"
+                          alt="Plenty Plant Product 5"
+                          width="100%"
+                          height="150"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 0 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1741680374/uploads/w5wjj16rov1d1decfwe3.png"
+                          alt="Plenty Plant Product 6"
+                          width="100%"
+                          height="150"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- Contact Section -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #2e7d32 0%,
+                      #388e3c 100%
+                    );
+                    border-radius: 20px;
+                    padding: 40px 32px;
+                    text-align: center;
+                    margin: 40px 0;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <div
+                        style="
+                          color: #fff;
+                          font-size: 1.6rem;
+                          font-weight: 700;
+                          margin-bottom: 20px;
+                        "
+                      >
+                        Connect with Plenty Plant
+                      </div>
+                      <div
+                        style="
+                          color: #c8e6c9;
+                          font-size: 1.1rem;
+                          margin-bottom: 28px;
+                          line-height: 1.6;
+                        "
+                      >
+                        WhatsApp: +82 10-9782-9782<br />
+                        Instagram: @plentyplant.official
+                      </div>
+                      <a
+                        href="https://72h.io/page-track/letter-plentyplant?email=$%email%$&name=$%name%$&campaign_name=letter-plentyplant&brand=PlentyPlant&documentId=comauradricbt7ooz0if98fr"
+                        style="
+                          display: inline-block;
+                          background: #fff;
+                          color: #2e7d32;
+                          font-weight: 700;
+                          padding: 18px 36px;
+                          border-radius: 28px;
+                          text-decoration: none;
+                          font-size: 1.1rem;
+                          transition: all 0.3s ease;
+                          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+                        "
+                      >
+                        Contact Plenty Plant →
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- CTA Section -->
+                <div style="margin-top: 40px; text-align: center">
+                  <a
+                    href="https://72h.io/page-track/letter-plentyplant?email=$%email%$&name=$%name%$&campaign_name=letter-plentyplant&brand=PlentyPlant&documentId=comauradricbt7ooz0if98fr&action=explore_products"
+                    style="
+                      display: inline-block;
+                      background: linear-gradient(
+                        135deg,
+                        #4caf50 0%,
+                        #66bb6a 100%
+                      );
+                      color: #fff;
+                      font-weight: 700;
+                      font-size: 1.2rem;
+                      padding: 20px 48px;
+                      border-radius: 32px;
+                      text-decoration: none;
+                      box-shadow: 0 6px 24px rgba(76, 175, 80, 0.3);
+                      transition: all 0.3s ease;
+                    "
+                  >
+                    Explore All Plenty Plant Products →
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  background: #f8f9fa;
+                  color: #6c757d;
+                  text-align: center;
+                  font-size: 0.95rem;
+                  padding: 32px 24px 20px 24px;
+                  border-radius: 0 0 24px 24px;
+                  border-top: 1px solid #e9ecef;
+                "
+              >
+                This is an automated message. Please do not reply.<br />
+                Contact:
+                <a
+                  href="mailto:support@72h.io"
+                  style="color: #4caf50; text-decoration: underline"
+                  >support@72h.io</a
+                >
+                |
+                <a href="$%unsubscribe%$" style="color: #4caf50">unsubscribe</a
+                ><br />
+                © 2024 72Hours. All rights reserved.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

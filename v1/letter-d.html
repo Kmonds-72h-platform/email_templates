@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>72Hours - Premium K-Beauty Collection</title>
+    <style>
+      body {
+        font-family: "Noto Sans KR", "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+        color: #222;
+      }
+      .page-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 0 32px 0;
+        box-sizing: border-box;
+      }
+      .container {
+        max-width: 600px;
+        background: #fff;
+        border-radius: 32px;
+        box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13);
+        overflow: hidden;
+        padding: 0 0 8px 0;
+      }
+      .header {
+        padding: 48px 32px 32px 32px;
+        text-align: left;
+        background: #fff;
+        position: relative;
+      }
+      .logo {
+        margin-bottom: 24px;
+      }
+      .logo img {
+        height: 36px;
+      }
+      .mongs {
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      .mongs img {
+        height: 90px;
+        max-width: 100%;
+        filter: drop-shadow(0 4px 16px #e6d6ff);
+      }
+      .main-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0 0 12px 0;
+        color: #222;
+        letter-spacing: -1px;
+      }
+      .main-title .highlight {
+        color: #b97aff;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        color: #b97aff;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+      .desc {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 32px;
+      }
+      .button {
+        display: inline-block;
+        background: #b97aff;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 16px 36px;
+        border-radius: 32px;
+        text-decoration: none;
+        margin: 24px 0 0 0;
+        box-shadow: 0 2px 8px rgba(185, 122, 255, 0.12);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .button:hover {
+        background: #a259e6;
+        box-shadow: 0 4px 16px rgba(185, 122, 255, 0.18);
+      }
+      .content {
+        padding: 0 32px 32px 32px;
+      }
+      .features-box {
+        background: #f6f2ff;
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(185, 122, 255, 0.07);
+        padding: 32px 24px 24px 24px;
+        margin: 32px 0 0 0;
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .feature-item {
+        font-size: 1.08rem;
+        color: #3a2066;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.7;
+      }
+      .feature-item b {
+        color: #b97aff;
+        font-weight: 700;
+        margin-right: 4px;
+      }
+      .brand-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .brand-card {
+        background: #222;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 320px;
+        position: relative;
+      }
+      .brand-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 16px 16px 0 0;
+      }
+      .brand-info {
+        padding: 16px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .brand-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+      .brand-slogan {
+        font-size: 0.9rem;
+        color: #ccc;
+        line-height: 1.4;
+      }
+      .brand-button {
+        background: #111;
+        color: #fff;
+        font-weight: 700;
+        border-radius: 8px;
+        padding: 8px 16px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        text-align: center;
+        margin-top: 8px;
+      }
+      .video-section {
+        margin-top: 32px;
+      }
+      .video-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 16px;
+      }
+      .video-card {
+        background: #f8f8f8;
+        border-radius: 12px;
+        overflow: hidden;
+        height: 200px;
+        position: relative;
+      }
+      .video-card video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+      }
+      .section-title {
+        color: #222;
+        margin-bottom: 16px;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+      footer {
+        margin-top: 32px;
+        width: 100%;
+        text-align: center;
+      }
+      .footer {
+        background: #fff;
+        color: #888;
+        text-align: center;
+        font-size: 0.97rem;
+        padding: 32px 24px 18px 24px;
+        border-radius: 0 0 32px 32px;
+        box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      @media (max-width: 600px) {
+        .page-wrapper {
+          padding: 8px 0 8px 0;
+        }
+        .container {
+          margin: 8px 4px 8px 4px;
+          border-radius: 18px;
+        }
+        .header,
+        .content {
+          padding: 16px !important;
+        }
+        .features-box {
+          padding: 16px 8px 12px 8px;
+        }
+        .brand-grid {
+          grid-template-columns: 1fr;
+        }
+        .video-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="
+        background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+        padding: 40px 0;
+      "
+    >
+      <tr>
+        <td align="center">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="
+              background: #fff;
+              border-radius: 32px;
+              box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13);
+              padding: 0;
+            "
+          >
+            <tr>
+              <td style="padding: 48px 32px 32px 32px; text-align: left">
+                <div style="margin-bottom: 24px">
+                  <img
+                    src="https://www.72h.io/logo.png"
+                    alt="72Hours Logo"
+                    style="height: 36px"
+                  />
+                </div>
+                <div style="text-align: center; margin-bottom: 18px">
+                  <img
+                    src="https://www.72h.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMongs.4f34e304.png&w=828&q=75&dpl=dpl_BLcMrjonX3qmtQkaUhqDwHQvHbv2"
+                    alt="Mongs Mascot"
+                    style="
+                      height: 90px;
+                      max-width: 100%;
+                      filter: drop-shadow(0 4px 16px #e6d6ff);
+                    "
+                  />
+                </div>
+                <div
+                  style="
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                    margin: 0 0 12px 0;
+                    color: #222;
+                    letter-spacing: -1px;
+                  "
+                >
+                  Premium <span style="color: #b97aff">K-Beauty</span><br />VIP
+                  Collection
+                </div>
+                <div
+                  style="
+                    font-size: 1.1rem;
+                    color: #b97aff;
+                    font-weight: 700;
+                    margin-bottom: 24px;
+                  "
+                >
+                  Exclusive Access to Top-Tier Korean Beauty Brands
+                </div>
+                <div style="font-size: 1rem; color: #444; margin-bottom: 32px">
+                  Discover the most prestigious K-Beauty brands.<br />
+                  Welcome, <b>$%name%$</b>!
+                </div>
+                <a
+                  href="https://72h.io/page-track/letter-d?email=$%email%$&name=$%name%$&campaign_name=letter-d"
+                  style="
+                    display: inline-block;
+                    background: #b97aff;
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 16px 36px;
+                    border-radius: 32px;
+                    text-decoration: none;
+                    margin: 24px 0 0 0;
+                    box-shadow: 0 2px 8px rgba(185, 122, 255, 0.12);
+                    transition: background 0.2s, box-shadow 0.2s;
+                  "
+                >
+                  Access VIP Brands<br />
+                  Premium K-Beauty Experience<br />Click to Explore
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: #f6f2ff;
+                    border-radius: 18px;
+                    box-shadow: 0 2px 12px rgba(185, 122, 255, 0.07);
+                    padding: 32px 24px 24px 24px;
+                    margin: 32px 0 0 0;
+                  "
+                >
+                  <tr>
+                    <td style="padding: 24px 24px 8px 24px">
+                      <table
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            👑
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">VIP Access</b> to
+                            exclusive premium K-Beauty brands.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            💎
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Premium Quality</b>
+                            products with proven effectiveness.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🌟
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Direct Connection</b> with
+                            brand founders and experts.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🎯
+                          </td>
+                          <td style="font-size: 1.08rem; color: #3a2066">
+                            <b style="color: #b97aff">Exclusive Deals</b> and
+                            limited-time offers for VIP members.
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <div style="margin-top: 32px">
+                  <h2
+                    style="color: #222; margin-bottom: 24px; text-align: center"
+                  >
+                    VIP Premium Brands
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <!-- LOMERE Card -->
+                      <td width="50%" valign="top" style="padding: 0 12px 0 0">
+                        <table
+                          width="100%"
+                          cellpadding="0"
+                          cellspacing="0"
+                          border="0"
+                          style="
+                            background: #222;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            height: 360px;
+                          "
+                        >
+                          <tr>
+                            <td style="padding: 0">
+                              <img
+                                src="https://res.cloudinary.com/prod-72h/image/upload/v1741165226/uploads/rnfk0n3bbyhg9wkcuj7w.jpg"
+                                alt="LOMERE"
+                                width="100%"
+                                height="180"
+                                style="
+                                  display: block;
+                                  border-radius: 16px 16px 0 0;
+                                  object-fit: cover;
+                                "
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                padding: 24px 16px 0 16px;
+                                height: 100px;
+                                vertical-align: top;
+                              "
+                            >
+                              <div
+                                style="
+                                  font-size: 1.3rem;
+                                  font-weight: 700;
+                                  color: #fff;
+                                "
+                              >
+                                LOMERE
+                              </div>
+                              <div
+                                style="
+                                  font-size: 1rem;
+                                  color: #fff;
+                                  margin-top: 4px;
+                                "
+                              >
+                                Love the care Shine every moment
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="padding: 24px 0 24px 0; text-align: center"
+                            >
+                              <a
+                                href="https://72h.io/page-track/letter-d?email=$%email%$&name=$%name%$&campaign_name=letter-d&brand=LOMERE&documentId=yeccdejmj6eek8yul7d5lx7i"
+                                style="
+                                  display: inline-block;
+                                  background: #111;
+                                  color: #fff;
+                                  font-weight: 700;
+                                  border-radius: 8px;
+                                  padding: 12px 32px;
+                                  text-decoration: none;
+                                  font-size: 1.1rem;
+                                "
+                              >
+                                View →
+                              </a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <!-- LA MUSE Card -->
+                      <td width="50%" valign="top" style="padding: 0 0 0 12px">
+                        <table
+                          width="100%"
+                          cellpadding="0"
+                          cellspacing="0"
+                          border="0"
+                          style="
+                            background: #222;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            height: 360px;
+                          "
+                        >
+                          <tr>
+                            <td style="padding: 0">
+                              <img
+                                src="https://res.cloudinary.com/prod-72h/image/upload/v1741165226/uploads/rnfk0n3bbyhg9wkcuj7w.jpg"
+                                alt="LA MUSE"
+                                width="100%"
+                                height="180"
+                                style="
+                                  display: block;
+                                  border-radius: 16px 16px 0 0;
+                                  object-fit: cover;
+                                "
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                padding: 24px 16px 0 16px;
+                                height: 100px;
+                                vertical-align: top;
+                              "
+                            >
+                              <div
+                                style="
+                                  font-size: 1.3rem;
+                                  font-weight: 700;
+                                  color: #fff;
+                                "
+                              >
+                                LA MUSE
+                              </div>
+                              <div
+                                style="
+                                  font-size: 1rem;
+                                  color: #fff;
+                                  margin-top: 4px;
+                                "
+                              >
+                                LA MUSE shines through simplicity
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="padding: 24px 0 24px 0; text-align: center"
+                            >
+                              <a
+                                href="https://72h.io/page-track/letter-d?email=$%email%$&name=$%name%$&campaign_name=letter-d&brand=LA MUSE&documentId=v4qyudma1xxj3sq0kjann2mc"
+                                style="
+                                  display: inline-block;
+                                  background: #111;
+                                  color: #fff;
+                                  font-weight: 700;
+                                  border-radius: 8px;
+                                  padding: 12px 32px;
+                                  text-decoration: none;
+                                  font-size: 1.1rem;
+                                "
+                              >
+                                View →
+                              </a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <div style="margin-top: 32px">
+                  <h2
+                    style="color: #222; margin-bottom: 24px; text-align: center"
+                  >
+                    More Premium Brands
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <!-- COSRX Card -->
+                      <td width="50%" valign="top" style="padding: 0 12px 0 0">
+                        <table
+                          width="100%"
+                          cellpadding="0"
+                          cellspacing="0"
+                          border="0"
+                          style="
+                            background: #222;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            height: 360px;
+                          "
+                        >
+                          <tr>
+                            <td style="padding: 0">
+                              <img
+                                src="https://res.cloudinary.com/prod-72h/image/upload/v1741165226/uploads/rnfk0n3bbyhg9wkcuj7w.jpg"
+                                alt="COSRX"
+                                width="100%"
+                                height="180"
+                                style="
+                                  display: block;
+                                  border-radius: 16px 16px 0 0;
+                                  object-fit: cover;
+                                "
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                padding: 24px 16px 0 16px;
+                                height: 100px;
+                                vertical-align: top;
+                              "
+                            >
+                              <div
+                                style="
+                                  font-size: 1.3rem;
+                                  font-weight: 700;
+                                  color: #fff;
+                                "
+                              >
+                                COSRX
+                              </div>
+                              <div
+                                style="
+                                  font-size: 1rem;
+                                  color: #fff;
+                                  margin-top: 4px;
+                                "
+                              >
+                                Simple & Effective
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="padding: 24px 0 24px 0; text-align: center"
+                            >
+                              <a
+                                href="https://72h.io/page-track/letter-d?email=$%email%$&name=$%name%$&campaign_name=letter-d&brand=COSRX&documentId=ht7qo8ty081t2oq4bahd6xwl"
+                                style="
+                                  display: inline-block;
+                                  background: #111;
+                                  color: #fff;
+                                  font-weight: 700;
+                                  border-radius: 8px;
+                                  padding: 12px 32px;
+                                  text-decoration: none;
+                                  font-size: 1.1rem;
+                                "
+                              >
+                                View →
+                              </a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <!-- INNISFREE Card -->
+                      <td width="50%" valign="top" style="padding: 0 0 0 12px">
+                        <table
+                          width="100%"
+                          cellpadding="0"
+                          cellspacing="0"
+                          border="0"
+                          style="
+                            background: #222;
+                            border-radius: 16px;
+                            overflow: hidden;
+                            height: 360px;
+                          "
+                        >
+                          <tr>
+                            <td style="padding: 0">
+                              <img
+                                src="https://res.cloudinary.com/prod-72h/image/upload/v1741165226/uploads/rnfk0n3bbyhg9wkcuj7w.jpg"
+                                alt="INNISFREE"
+                                width="100%"
+                                height="180"
+                                style="
+                                  display: block;
+                                  border-radius: 16px 16px 0 0;
+                                  object-fit: cover;
+                                "
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="
+                                padding: 24px 16px 0 16px;
+                                height: 100px;
+                                vertical-align: top;
+                              "
+                            >
+                              <div
+                                style="
+                                  font-size: 1.3rem;
+                                  font-weight: 700;
+                                  color: #fff;
+                                "
+                              >
+                                INNISFREE
+                              </div>
+                              <div
+                                style="
+                                  font-size: 1rem;
+                                  color: #fff;
+                                  margin-top: 4px;
+                                "
+                              >
+                                Natural Beauty from Jeju
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td
+                              style="padding: 24px 0 24px 0; text-align: center"
+                            >
+                              <a
+                                href="https://72h.io/page-track/letter-d?email=$%email%$&name=$%name%$&campaign_name=letter-d&brand=INNISFREE&documentId=ht7qo8ty081t2oq4bahd6xwl"
+                                style="
+                                  display: inline-block;
+                                  background: #111;
+                                  color: #fff;
+                                  font-weight: 700;
+                                  border-radius: 8px;
+                                  padding: 12px 32px;
+                                  text-decoration: none;
+                                  font-size: 1.1rem;
+                                "
+                              >
+                                View →
+                              </a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <div style="margin-top: 32px">
+                  <h2
+                    style="color: #222; margin-bottom: 24px; text-align: center"
+                  >
+                    Featured Videos
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <!-- LOMERE Video -->
+                      <td width="50%" valign="top" style="padding: 0 12px 0 0">
+                        <table
+                          width="100%"
+                          cellpadding="0"
+                          cellspacing="0"
+                          border="0"
+                          style="
+                            background: #f8f8f8;
+                            border-radius: 12px;
+                            overflow: hidden;
+                            height: 200px;
+                          "
+                        >
+                          <tr>
+                            <td style="padding: 0; position: relative">
+                              <video
+                                width="100%"
+                                height="200"
+                                style="object-fit: cover"
+                                poster="https://res.cloudinary.com/prod-72h/image/upload/v1741165226/uploads/rnfk0n3bbyhg9wkcuj7w.jpg"
+                              >
+                                <source
+                                  src="https://res.cloudinary.com/prod-72h/video/upload/v1741165226/uploads/rnfk0n3bbyhg9wkcuj7w.mp4"
+                                  type="video/mp4"
+                                />
+                              </video>
+                              <div
+                                style="
+                                  position: absolute;
+                                  top: 50%;
+                                  left: 50%;
+                                  transform: translate(-50%, -50%);
+                                  background: rgba(0, 0, 0, 0.5);
+                                  color: white;
+                                  padding: 8px 16px;
+                                  border-radius: 20px;
+                                  font-size: 1.2rem;
+                                "
+                              >
+                                ▶ LOMERE
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <!-- LA MUSE Video -->
+                      <td width="50%" valign="top" style="padding: 0 0 0 12px">
+                        <table
+                          width="100%"
+                          cellpadding="0"
+                          cellspacing="0"
+                          border="0"
+                          style="
+                            background: #f8f8f8;
+                            border-radius: 12px;
+                            overflow: hidden;
+                            height: 200px;
+                          "
+                        >
+                          <tr>
+                            <td style="padding: 0; position: relative">
+                              <video
+                                width="100%"
+                                height="200"
+                                style="object-fit: cover"
+                                poster="https://res.cloudinary.com/prod-72h/image/upload/v1741165226/uploads/rnfk0n3bbyhg9wkcuj7w.jpg"
+                              >
+                                <source
+                                  src="https://res.cloudinary.com/prod-72h/video/upload/v1741165226/uploads/rnfk0n3bbyhg9wkcuj7w.mp4"
+                                  type="video/mp4"
+                                />
+                              </video>
+                              <div
+                                style="
+                                  position: absolute;
+                                  top: 50%;
+                                  left: 50%;
+                                  transform: translate(-50%, -50%);
+                                  background: rgba(0, 0, 0, 0.5);
+                                  color: white;
+                                  padding: 8px 16px;
+                                  border-radius: 20px;
+                                  font-size: 1.2rem;
+                                "
+                              >
+                                ▶ LA MUSE
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <div style="margin-top: 32px; text-align: center">
+                  <a
+                    href="https://72h.io/page-track/letter-d?email=$%email%$&name=$%name%$&campaign_name=letter-d"
+                    style="
+                      display: inline-block;
+                      background: #b97aff;
+                      color: #fff;
+                      font-weight: 700;
+                      font-size: 1.2rem;
+                      padding: 20px 48px;
+                      border-radius: 32px;
+                      text-decoration: none;
+                      box-shadow: 0 4px 16px rgba(185, 122, 255, 0.2);
+                      transition: background 0.2s, box-shadow 0.2s;
+                    "
+                  >
+                    Explore VIP Brands →
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  background: #fff;
+                  color: #888;
+                  text-align: center;
+                  font-size: 0.97rem;
+                  padding: 32px 24px 18px 24px;
+                  border-radius: 0 0 32px 32px;
+                  box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+                  max-width: 600px;
+                  margin: 0 auto;
+                "
+              >
+                This is an automated message. Please do not reply.<br />
+                Contact:
+                <a
+                  href="mailto:support@72h.io"
+                  style="color: #b97aff; text-decoration: underline"
+                  >support@72h.io</a
+                >
+                |
+                <a
+                  href="https://seven2h-n8n-proj.onrender.com/webhook/unsubscribe?email=$%email%$"
+                  style="color: #b97aff"
+                  >unsubscribe</a
+                ><br />
+                © 2024 72Hours. All rights reserved.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

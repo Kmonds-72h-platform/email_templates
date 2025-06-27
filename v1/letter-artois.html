@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>72Hours - ARTOIS Brand Detail</title>
+    <style>
+      body {
+        font-family: "Noto Sans KR", "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f6f2ff;
+        color: #222;
+      }
+      .page-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 0 32px 0;
+        box-sizing: border-box;
+      }
+      .container {
+        max-width: 600px;
+        background: #fff;
+        border-radius: 32px;
+        box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13),
+          0 1.5px 8px rgba(120, 80, 255, 0.04);
+        overflow: hidden;
+        padding: 0 0 8px 0;
+      }
+      .header {
+        padding: 48px 32px 32px 32px;
+        text-align: left;
+        background: #fff;
+        position: relative;
+      }
+      .logo {
+        margin-bottom: 24px;
+      }
+      .logo img {
+        height: 36px;
+      }
+      .mongs {
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      .mongs img {
+        height: 90px;
+        max-width: 100%;
+        filter: drop-shadow(0 4px 16px #e6d6ff);
+      }
+      .main-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0 0 12px 0;
+        color: #222;
+        letter-spacing: -1px;
+      }
+      .main-title .highlight {
+        color: #b97aff;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+        color: #b97aff;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+      .desc {
+        font-size: 1rem;
+        color: #444;
+        margin-bottom: 32px;
+      }
+      .button {
+        display: inline-block;
+        background: #b97aff;
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 16px 36px;
+        border-radius: 32px;
+        text-decoration: none;
+        margin: 24px 0 0 0;
+        box-shadow: 0 2px 8px rgba(185, 122, 255, 0.12);
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .button:hover {
+        background: #a259e6;
+        box-shadow: 0 4px 16px rgba(185, 122, 255, 0.18);
+      }
+      .content {
+        padding: 0 32px 32px 32px;
+      }
+      .brand-hero {
+        background: linear-gradient(135deg, #2c1810 0%, #4a2c1a 100%);
+        border-radius: 24px;
+        padding: 32px;
+        margin-bottom: 32px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .brand-hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("https://res.cloudinary.com/prod-72h/image/upload/v1747978713/uploads/v9knzgbjcnjxwhuhsgqo.jpg")
+          center/cover;
+        opacity: 0.4;
+        z-index: 1;
+      }
+      .brand-hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      .brand-logo {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 24px auto;
+        background: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+      .brand-logo img {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+      }
+      .brand-name {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 12px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      }
+      .brand-slogan {
+        font-size: 1.2rem;
+        color: #d4af37;
+        font-weight: 600;
+        margin-bottom: 24px;
+        font-style: italic;
+      }
+      .brand-stats {
+        display: flex;
+        justify-content: center;
+        gap: 32px;
+        margin-top: 24px;
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-number {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #fff;
+        display: block;
+      }
+      .stat-label {
+        font-size: 0.9rem;
+        color: #ccc;
+        margin-top: 4px;
+      }
+      .section-title {
+        color: #222;
+        margin-bottom: 24px;
+        text-align: center;
+        font-size: 1.6rem;
+        font-weight: 700;
+      }
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .product-card {
+        background: #f8f8f8;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 200px;
+        position: relative;
+      }
+      .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-section {
+        margin: 32px 0;
+      }
+      .video-container {
+        background: #f8f8f8;
+        border-radius: 16px;
+        overflow: hidden;
+        height: 300px;
+        position: relative;
+      }
+      .video-container video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .video-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 24px;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+      .features-box {
+        background: #f6f2ff;
+        border-radius: 18px;
+        box-shadow: 0 2px 12px rgba(185, 122, 255, 0.07);
+        padding: 32px 24px 24px 24px;
+        margin: 32px 0;
+      }
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .feature-item {
+        font-size: 1.08rem;
+        color: #3a2066;
+        margin-bottom: 18px;
+        display: flex;
+        align-items: flex-start;
+        line-height: 1.7;
+      }
+      .feature-item b {
+        color: #b97aff;
+        font-weight: 700;
+        margin-right: 4px;
+      }
+      .contact-section {
+        background: #2c1810;
+        border-radius: 18px;
+        padding: 32px 24px;
+        text-align: center;
+        margin: 32px 0;
+      }
+      .contact-title {
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+      .contact-info {
+        color: #ccc;
+        font-size: 1.1rem;
+        margin-bottom: 24px;
+      }
+      .contact-button {
+        display: inline-block;
+        background: #d4af37;
+        color: #2c1810;
+        font-weight: 700;
+        padding: 16px 32px;
+        border-radius: 24px;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+      footer {
+        margin-top: 32px;
+        width: 100%;
+        text-align: center;
+      }
+      .footer {
+        background: #fff;
+        color: #888;
+        text-align: center;
+        font-size: 0.97rem;
+        padding: 32px 24px 18px 24px;
+        border-radius: 0 0 32px 32px;
+        box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      @media (max-width: 600px) {
+        .page-wrapper {
+          padding: 8px 0 8px 0;
+        }
+        .container {
+          margin: 8px 4px 8px 4px;
+          border-radius: 18px;
+        }
+        .header,
+        .content {
+          padding: 16px !important;
+        }
+        .brand-hero {
+          padding: 24px 16px;
+        }
+        .brand-name {
+          font-size: 2rem;
+        }
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+        .brand-stats {
+          flex-direction: column;
+          gap: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+    "
+  >
+    <table
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      border="0"
+      style="
+        background: linear-gradient(135deg, #f6f2ff 0%, #e9e0ff 100%);
+        padding: 40px 0;
+      "
+    >
+      <tr>
+        <td align="center">
+          <table
+            width="600"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="
+              background: #fff;
+              border-radius: 32px;
+              box-shadow: 0 12px 40px rgba(185, 122, 255, 0.13);
+              padding: 0;
+            "
+          >
+            <tr>
+              <td style="padding: 48px 32px 32px 32px; text-align: left">
+                <div style="margin-bottom: 24px">
+                  <img
+                    src="https://www.72h.io/logo.png"
+                    alt="72Hours Logo"
+                    style="height: 36px"
+                  />
+                </div>
+                <div style="text-align: center; margin-bottom: 18px">
+                  <img
+                    src="https://www.72h.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FMongs.4f34e304.png&w=828&q=75&dpl=dpl_BLcMrjonX3qmtQkaUhqDwHQvHbv2"
+                    alt="Mongs Mascot"
+                    style="
+                      height: 90px;
+                      max-width: 100%;
+                      filter: drop-shadow(0 4px 16px #e6d6ff);
+                    "
+                  />
+                </div>
+                <div
+                  style="
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                    margin: 0 0 12px 0;
+                    color: #222;
+                    letter-spacing: -1px;
+                  "
+                >
+                  Discover <span style="color: #b97aff">ARTOIS</span><br />
+                  Luxury Fragrance
+                </div>
+                <div
+                  style="
+                    font-size: 1.1rem;
+                    color: #b97aff;
+                    font-weight: 700;
+                    margin-bottom: 24px;
+                  "
+                >
+                  Premium Perfume-Grade Beauty & Wellness
+                </div>
+                <div style="font-size: 1rem; color: #444; margin-bottom: 32px">
+                  Experience the transformative power of fragrance.<br />
+                  Welcome, <b>$%name%$</b>!
+                </div>
+                <a
+                  href="https://72h.io/page-track/letter-artois?email=$%email%$&name=$%name%$&campaign_name=letter-artois"
+                  style="
+                    display: inline-block;
+                    background: #b97aff;
+                    color: #fff;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 16px 36px;
+                    border-radius: 32px;
+                    text-decoration: none;
+                    margin: 24px 0 0 0;
+                    box-shadow: 0 2px 8px rgba(185, 122, 255, 0.12);
+                    transition: background 0.2s, box-shadow 0.2s;
+                  "
+                >
+                  Explore ARTOIS Collection
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 0 32px 32px 32px">
+                <!-- Brand Hero Section -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #2c1810 0%,
+                      #4a2c1a 100%
+                    );
+                    border-radius: 24px;
+                    padding: 32px;
+                    margin-bottom: 32px;
+                    text-align: center;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <div style="margin-bottom: 24px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1747976538/uploads/s2qxfcm8jdtaodzqeg6n.png"
+                          alt="ARTOIS Logo"
+                          style="width: 80px; height: 80px; object-fit: contain"
+                        />
+                      </div>
+                      <div
+                        style="
+                          font-size: 2.5rem;
+                          font-weight: 800;
+                          color: #fff;
+                          margin-bottom: 12px;
+                        "
+                      >
+                        ARTOIS
+                      </div>
+                      <div
+                        style="
+                          font-size: 1.2rem;
+                          color: #d4af37;
+                          font-weight: 600;
+                          margin-bottom: 24px;
+                          font-style: italic;
+                        "
+                      >
+                        Feel Better
+                      </div>
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: center;
+                          gap: 32px;
+                          margin-top: 24px;
+                        "
+                      >
+                        <div style="text-align: center">
+                          <span
+                            style="
+                              font-size: 1.8rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >8</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #ccc;
+                              margin-top: 4px;
+                            "
+                            >Products</span
+                          >
+                        </div>
+                        <div style="text-align: center">
+                          <span
+                            style="
+                              font-size: 1.8rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >4</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #ccc;
+                              margin-top: 4px;
+                            "
+                            >Videos</span
+                          >
+                        </div>
+                        <div style="text-align: center">
+                          <span
+                            style="
+                              font-size: 1.8rem;
+                              font-weight: 800;
+                              color: #fff;
+                              display: block;
+                            "
+                            >4</span
+                          >
+                          <span
+                            style="
+                              font-size: 0.9rem;
+                              color: #ccc;
+                              margin-top: 4px;
+                            "
+                            >Awards</span
+                          >
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Featured Products -->
+                <div style="margin-bottom: 32px">
+                  <h2
+                    style="
+                      color: #222;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Luxury Fragrance Collection
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 0 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1747979405/uploads/nz43aohwuldj6aobaxiu.jpg"
+                          alt="ARTOIS Product 1"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 0 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1747979405/uploads/xa10cbclegnprpknstyd.jpg"
+                          alt="ARTOIS Product 2"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 8px 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1747979406/uploads/ataylfbdb61tgj1hh8cy.jpg"
+                          alt="ARTOIS Product 3"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 8px 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1747979405/uploads/ssgdn0btizgobfbwfb1h.jpg"
+                          alt="ARTOIS Product 4"
+                          width="100%"
+                          height="200"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- Brand Features -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: #f6f2ff;
+                    border-radius: 18px;
+                    box-shadow: 0 2px 12px rgba(185, 122, 255, 0.07);
+                    padding: 32px 24px 24px 24px;
+                    margin: 32px 0;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <h3
+                        style="
+                          color: #222;
+                          margin-bottom: 24px;
+                          text-align: center;
+                          font-size: 1.4rem;
+                          font-weight: 700;
+                        "
+                      >
+                        Why Choose ARTOIS?
+                      </h3>
+                      <table
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                      >
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🌸
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Luxury Fragrance</b> -
+                            Premium perfume-grade ingredients in every product
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            ✨
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Three Layers</b> - Unique
+                            scent concepts with lasting impressions
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🎭
+                          </td>
+                          <td
+                            style="
+                              padding-bottom: 16px;
+                              font-size: 1.08rem;
+                              color: #3a2066;
+                            "
+                          >
+                            <b style="color: #b97aff">Emotional Rituals</b> -
+                            Daily routines that carry emotion and memory
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            valign="top"
+                            style="font-size: 1.3rem; width: 32px"
+                          >
+                            🏆
+                          </td>
+                          <td style="font-size: 1.08rem; color: #3a2066">
+                            <b style="color: #b97aff">Award-Winning</b> -
+                            Recognized for excellence in fragrance innovation
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Featured Video -->
+                <div style="margin: 32px 0">
+                  <h2
+                    style="
+                      color: #222;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Experience ARTOIS Fragrance
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                    style="
+                      background: #f8f8f8;
+                      border-radius: 16px;
+                      overflow: hidden;
+                      height: 300px;
+                    "
+                  >
+                    <tr>
+                      <td style="padding: 0; position: relative">
+                        <video
+                          width="100%"
+                          height="300"
+                          style="object-fit: cover"
+                          poster="https://res.cloudinary.com/prod-72h/image/upload/v1747978713/uploads/v9knzgbjcnjxwhuhsgqo.jpg"
+                        >
+                          <source
+                            src="https://res.cloudinary.com/prod-72h/video/upload/v1747976781/uploads/xwlbiy1i8ybtutmdir1y.mp4"
+                            type="video/mp4"
+                          />
+                        </video>
+                        <div
+                          style="
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background: rgba(0, 0, 0, 0.7);
+                            color: white;
+                            padding: 12px 24px;
+                            border-radius: 24px;
+                            font-size: 1.3rem;
+                            font-weight: 600;
+                          "
+                        >
+                          <a
+                            href="https://72h.io/page-track/letter-artois?email=$%email%$&name=$%name%$&campaign_name=letter-artois&brand=ARTOIS&documentId=ie7fk0mhstfqzo0qj000tgvq&action=watch_video"
+                            style="
+                              color: white;
+                              text-decoration: none;
+                              display: block;
+                            "
+                          >
+                            ▶ Watch ARTOIS
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- Awards Section -->
+                <div style="margin: 32px 0">
+                  <h2
+                    style="
+                      color: #222;
+                      margin-bottom: 24px;
+                      text-align: center;
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                    "
+                  >
+                    Awards & Recognition
+                  </h2>
+                  <table
+                    width="100%"
+                    cellpadding="0"
+                    cellspacing="0"
+                    border="0"
+                  >
+                    <tr>
+                      <td width="50%" valign="top" style="padding: 0 8px 0 0">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1750152331/uploads/rlx36udg903tskgqq82m.jpg"
+                          alt="ARTOIS Award 1"
+                          width="100%"
+                          height="150"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                      <td width="50%" valign="top" style="padding: 0 0 0 8px">
+                        <img
+                          src="https://res.cloudinary.com/prod-72h/image/upload/v1750152330/uploads/brbxnbi1yffb0w2ywssq.png"
+                          alt="ARTOIS Award 2"
+                          width="100%"
+                          height="150"
+                          style="
+                            display: block;
+                            border-radius: 16px;
+                            object-fit: cover;
+                          "
+                        />
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+
+                <!-- Contact Section -->
+                <table
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  border="0"
+                  style="
+                    background: #2c1810;
+                    border-radius: 18px;
+                    padding: 32px 24px;
+                    text-align: center;
+                    margin: 32px 0;
+                  "
+                >
+                  <tr>
+                    <td>
+                      <div
+                        style="
+                          color: #fff;
+                          font-size: 1.4rem;
+                          font-weight: 700;
+                          margin-bottom: 16px;
+                        "
+                      >
+                        Connect with ARTOIS
+                      </div>
+                      <div
+                        style="
+                          color: #ccc;
+                          font-size: 1.1rem;
+                          margin-bottom: 24px;
+                        "
+                      >
+                        WhatsApp: +82 10-4000-3050<br />
+                        Instagram: @artois_official
+                      </div>
+                      <a
+                        href="https://72h.io/page-track/letter-artois?email=$%email%$&name=$%name%$&campaign_name=letter-artois&brand=ARTOIS&documentId=ie7fk0mhstfqzo0qj000tgvq"
+                        style="
+                          display: inline-block;
+                          background: #d4af37;
+                          color: #2c1810;
+                          font-weight: 700;
+                          padding: 16px 32px;
+                          border-radius: 24px;
+                          text-decoration: none;
+                          font-size: 1.1rem;
+                        "
+                      >
+                        Contact ARTOIS →
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- CTA Section -->
+                <div style="margin-top: 32px; text-align: center">
+                  <a
+                    href="https://72h.io/page-track/letter-artois?email=$%email%$&name=$%name%$&campaign_name=letter-artois"
+                    style="
+                      display: inline-block;
+                      background: #b97aff;
+                      color: #fff;
+                      font-weight: 700;
+                      font-size: 1.2rem;
+                      padding: 20px 48px;
+                      border-radius: 32px;
+                      text-decoration: none;
+                      box-shadow: 0 4px 16px rgba(185, 122, 255, 0.2);
+                      transition: background 0.2s, box-shadow 0.2s;
+                    "
+                  >
+                    Explore All ARTOIS Products →
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td
+                style="
+                  background: #fff;
+                  color: #888;
+                  text-align: center;
+                  font-size: 0.97rem;
+                  padding: 32px 24px 18px 24px;
+                  border-radius: 0 0 32px 32px;
+                  box-shadow: 0 2px 12px rgba(185, 122, 255, 0.04);
+                  max-width: 600px;
+                  margin: 0 auto;
+                "
+              >
+                This is an automated message. Please do not reply.<br />
+                Contact:
+                <a
+                  href="mailto:support@72h.io"
+                  style="color: #b97aff; text-decoration: underline"
+                  >support@72h.io</a
+                >
+                |
+                <a
+                  href="https://seven2h-n8n-proj.onrender.com/webhook/unsubscribe?email=$%email%$"
+                  style="color: #b97aff"
+                  >unsubscribe</a
+                ><br />
+                © 2024 72Hours. All rights reserved.
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
