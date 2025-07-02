@@ -1411,6 +1411,24 @@
           "publishedAt": "2025-06-30T08:51:00.074Z",
           "locale": "en",
           "like_on": false
+        },
+        {
+          "id": 575,
+          "documentId": "phopq3zq4wzmgi63pe6otqll",
+          "createdAt": "2025-07-02T03:52:15.599Z",
+          "updatedAt": "2025-07-02T03:57:51.164Z",
+          "publishedAt": "2025-07-02T03:57:51.242Z",
+          "locale": "en",
+          "like_on": false
+        },
+        {
+          "id": 573,
+          "documentId": "kb1y7sz5p2dxcctdthoz05yx",
+          "createdAt": "2025-07-02T03:56:59.670Z",
+          "updatedAt": "2025-07-02T03:57:15.340Z",
+          "publishedAt": "2025-07-02T03:57:15.396Z",
+          "locale": "en",
+          "like_on": false
         }
       ],
       "brand_meta": {
@@ -1772,6 +1790,15 @@
           "createdAt": "2025-06-25T08:34:49.673Z",
           "updatedAt": "2025-06-25T08:34:51.281Z",
           "publishedAt": "2025-06-25T08:34:51.350Z",
+          "locale": "en",
+          "like_on": true
+        },
+        {
+          "id": 564,
+          "documentId": "vb9wnb9osny0n2mdoxr0jjdz",
+          "createdAt": "2025-07-02T03:49:18.377Z",
+          "updatedAt": "2025-07-02T03:49:18.377Z",
+          "publishedAt": "2025-07-02T03:49:18.473Z",
           "locale": "en",
           "like_on": true
         }
@@ -2181,7 +2208,14 @@
           "like_on": true
         }
       ],
-      "brand_meta": null,
+      "brand_meta": {
+        "id": 87,
+        "documentId": "ru9ygg5ghmwyhu1nkwwdgv2m",
+        "createdAt": "2025-07-01T23:49:17.164Z",
+        "updatedAt": "2025-07-01T23:49:21.677Z",
+        "publishedAt": "2025-07-01T23:49:21.759Z",
+        "locale": "en"
+      },
       "brand_about": {
         "id": 40,
         "documentId": "xs4h738wfmbf51n2c1v0a4l0",
